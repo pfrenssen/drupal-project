@@ -37,7 +37,8 @@ before_install:
   - mysql -e 'create database myproject'
 
 install:
-  # Install Composer dependencies.
+  # Validate and install Composer dependencies.
+  - composer --verbose validate
   - composer --verbose install
 
   # Define build properties for the local test environment.
