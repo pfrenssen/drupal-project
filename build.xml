@@ -2,18 +2,22 @@
 
 <project name="My Drupal Project" default="help">
 
-    <!-- Import local Phing targets. -->
+    <!-- Import Phing targets specific to the local environment. -->
     <import file="${project.basedir}/build.local.xml" optional="true" />
 
-    <!-- Import project specific Phing targets. -->
+    <!-- Import Phing targets specific to this project. -->
     <import file="${project.basedir}/build.project.xml" optional="true" />
 
-    <!-- Import main Phing targets. -->
+    <!-- Import generic Phing targets that are used as defaults suitable for any Drupal project. -->
     <import file="${project.basedir}/build.dist.xml" />
 
-    <!-- Import build properties. -->
+    <!-- Import build properties specific to the local environment. -->
     <property file="build.properties.local" />
+
+    <!-- Import build properties specific to this project. -->
     <property file="build.properties" />
+
+    <!-- Import generic build properties that are used as defaults suitable for any Drupal project. -->
     <property file="build.properties.dist" />
 
 </project>
